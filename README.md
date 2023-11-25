@@ -1,3 +1,15 @@
+step on cloning gitbash
+- git clone https://github.com/Yladx/OOP-Project.git
+  
+(if u add something)
+step on pushing data first cd to oop-project 
+-git add . 
+-git commit -m "Updated the project"
+-git push
+
+when someone edit the data and push it pull it before adding new one
+-git pull
+
 # OOP-Project
 
 steps to follow

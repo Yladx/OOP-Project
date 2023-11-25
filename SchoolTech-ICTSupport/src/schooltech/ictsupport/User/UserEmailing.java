@@ -136,7 +136,17 @@ public class UserEmailing extends User{
             // Connect to the database using the 'con' connection obtained from the User class
             connectToDatabase();
             // Execute SQL statement to select emails based on the predefined status
-            String selectSql = "SELECT Subject, DateTime FROM emails WHERE EmailSender = ? AND Status = ? ORDER BY DateTime DESC" ;
+              // Adjust the SQL query to handle the case where the status is not equal to a specific value
+        String selectSql;
+        if (EmailStatus.startsWith("!")) {
+            // If EmailStatus starts with "!", it means we want emails with a status not equal to the provided value
+            selectSql = "SELECT Subject, DateTime FROM emails WHERE EmailSender = ? AND Status != ? ORDER BY DateTime DESC";
+            // Remove "!" from the beginning of EmailStatus for comparison
+            EmailStatus = EmailStatus.substring(1);
+        } else {
+            // Otherwise, select emails with the specified status
+            selectSql = "SELECT Subject, DateTime FROM emails WHERE EmailSender = ? AND Status = ? ORDER BY DateTime DESC";
+        }
             try (PreparedStatement selectStatement = con.prepareStatement(selectSql)) {
                 selectStatement.setString(1, loggedInEmail);
                 selectStatement.setString(2, EmailStatus);
@@ -245,7 +255,10 @@ public class UserEmailing extends User{
         button.setMaximumSize(new Dimension(newWidth, newHeight));
     }
 
-    public void archiveSelectedEmails(JPanel targetPanel, String LoginEmail){
+  
+    public void archiveSelectedEmails(JPanel targetPanel, String loggedInEmail) {
+        
+     
     // Display a confirmation dialog before proceeding with the archive action
     int confirmResult = JOptionPane.showConfirmDialog(null,
             "Are you sure you want to archive the selected emails?",
@@ -261,19 +274,11 @@ public class UserEmailing extends User{
                     // Perform archive action for the selected email
                     archiveEmail(subject, loggedInEmail);
 
-                    SwingUtilities.invokeLater(() -> {
-                        targetPanel.revalidate();
-                        targetPanel.repaint();
-                          displayAllEmailintoButtonCheckbox(loggedInEmail, targetPanel, Status);
-                    });
+                    // Update the display after archiving
+                    displayAllEmailintoButtonCheckbox(loggedInEmail, targetPanel, Status);
                 } catch (SQLException ex) {
                     ex.printStackTrace(); // Handle the exception appropriately
                 }
-                 
-        SwingUtilities.invokeLater(() -> {
-                targetPanel.revalidate();
-                targetPanel.repaint(); });
-          displayAllEmailintoButtonCheckbox(loggedInEmail, targetPanel, Status);
             }
         }
 

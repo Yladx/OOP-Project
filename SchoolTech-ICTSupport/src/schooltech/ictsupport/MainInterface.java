@@ -149,13 +149,9 @@ String query = "SHOW TABLES";
      try (Statement stmt = con.createStatement();
          ResultSet resultSet = stmt.executeQuery(query)) {
 
-        while (resultSet.next()) {
-            String tableName = resultSet.getString(1);
-
-            // Exclude tables with names containing "pma"
-            if (!tableName.toLowerCase().contains("pma")) {
-                tableNames.add(tableName);
-            }
+         while (resultSet.next()) {
+        String tableName = resultSet.getString(1);
+        tableNames.add(tableName);
         }
     } catch (SQLException e) {
         e.printStackTrace();

@@ -662,10 +662,9 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         
         EmailPanel.removeAll();
           
-      currentStatus = "Sent";
-        userEmail.displayAllEmailintoButtonCheckbox(LoginUser, EmailPanel, currentStatus);
+     
         
-        currentStatus = "Replied";
+        currentStatus = "!Archived";
          userEmail.displayAllEmailintoButtonCheckbox(LoginUser, EmailPanel, currentStatus);
        
          revalidate();

@@ -18,7 +18,7 @@ public class AdminViewSelectedEmail extends javax.swing.JFrame {
 
     AdminEmail adminmethod = new AdminEmail();
     private Connection con;
-    private String SubjectSelected;
+    private final String SubjectSelected;
     
    
     public AdminViewSelectedEmail(String subject)throws SQLException {
@@ -275,7 +275,7 @@ public class AdminViewSelectedEmail extends javax.swing.JFrame {
     }//GEN-LAST:event_BackActionPerformed
 
     private void ReplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReplyButtonActionPerformed
-        Replytoemail.setVisible(true);
+            Replytoemail.setVisible(true);
         
         Replytoemail.setPreferredSize(new Dimension(600, 350));
        
@@ -286,7 +286,14 @@ public class AdminViewSelectedEmail extends javax.swing.JFrame {
 
         if (replySent) {
             JOptionPane.showMessageDialog(null, "Reply sent successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            
             Replytoemail.dispose();
+           
+            this.dispose();
+            
+       
+            
+            
         } else {
         JOptionPane.showMessageDialog(null, "Failed to send reply.", "Error", JOptionPane.ERROR_MESSAGE);
         

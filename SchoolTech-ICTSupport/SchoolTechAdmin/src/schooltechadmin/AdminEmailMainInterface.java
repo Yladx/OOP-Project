@@ -64,6 +64,7 @@ public class AdminEmailMainInterface extends javax.swing.JFrame {
         EmailPanel = new javax.swing.JPanel();
 
         Account.setTitle("ADMIN ACCOUNT");
+        Account.setResizable(false);
 
         AccountBg.setBackground(new java.awt.Color(255, 255, 255));
         AccountBg.setLayout(null);
@@ -177,6 +178,7 @@ public class AdminEmailMainInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SCHOOLTECH[ADMIN]");
         setMinimumSize(new java.awt.Dimension(720, 450));
+        setResizable(false);
 
         BackGround.setBackground(new java.awt.Color(255, 254, 239));
         BackGround.setMinimumSize(new java.awt.Dimension(720, 450));
@@ -211,7 +213,7 @@ public class AdminEmailMainInterface extends javax.swing.JFrame {
         EmailSent.setForeground(new java.awt.Color(102, 102, 102));
         EmailSent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-inbox-30.png"))); // NOI18N
         EmailSent.setText("Email User Sent");
-        EmailSent.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        EmailSent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EmailSent.setName("EmailSent"); // NOI18N
         EmailSent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

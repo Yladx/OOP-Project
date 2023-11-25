@@ -56,6 +56,7 @@ public class Login_Interface extends javax.swing.JFrame {
         setTitle("SchoolTech");
         setMinimumSize(new java.awt.Dimension(720, 450));
         setPreferredSize(new java.awt.Dimension(720, 450));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);

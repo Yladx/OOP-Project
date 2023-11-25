@@ -49,6 +49,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         ComposeEmail = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         ComposeEmailBackGround = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         ComposeEmailForm = new javax.swing.JPanel();
         EmailerName = new javax.swing.JLabel();
         SchoolTechasReciever = new javax.swing.JLabel();
@@ -57,7 +58,6 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         ComposeSubject = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         MessageTextArea = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
         SendEmail = new javax.swing.JButton();
         BackFromEmailCompose = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -96,6 +96,17 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
 
         ComposeEmailBackGround.setBackground(new java.awt.Color(255, 254, 239));
         ComposeEmailBackGround.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(33, 33, 33));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("EMAIL SCHOOLTECH");
+        jLabel1.setToolTipText("");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel1.setOpaque(true);
+        ComposeEmailBackGround.add(jLabel1);
+        jLabel1.setBounds(63, 29, 224, 35);
 
         ComposeEmailForm.setBackground(new java.awt.Color(204, 204, 204));
         ComposeEmailForm.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -169,17 +180,6 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         ComposeEmailBackGround.add(ComposeEmailForm);
         ComposeEmailForm.setBounds(6, 73, 337, 318);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel1.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(33, 33, 33));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("EMAIL SCHOOLTECH");
-        jLabel1.setToolTipText("");
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel1.setOpaque(true);
-        ComposeEmailBackGround.add(jLabel1);
-        jLabel1.setBounds(63, 29, 224, 35);
-
         SendEmail.setBackground(new java.awt.Color(153, 204, 255));
         SendEmail.setForeground(new java.awt.Color(33, 33, 33));
         SendEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-send-16.png"))); // NOI18N
@@ -206,7 +206,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
             }
         });
         ComposeEmailBackGround.add(BackFromEmailCompose);
-        BackFromEmailCompose.setBounds(6, 14, 24, 24);
+        BackFromEmailCompose.setBounds(6, 14, 23, 24);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/BackGround/1711593.gif"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -229,6 +229,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         );
 
         Account.setTitle("Account");
+        Account.setResizable(false);
 
         AccountBg.setBackground(new java.awt.Color(255, 255, 255));
         AccountBg.setLayout(null);
@@ -239,7 +240,6 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 204));
         jLabel2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText(" Account Information");
         jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel2.setOpaque(true);
@@ -256,7 +256,6 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         UserInfo.setBounds(50, 110, 170, 160);
 
         DeleteAccount.setBackground(new java.awt.Color(153, 0, 0));
-        DeleteAccount.setForeground(new java.awt.Color(0, 0, 0));
         DeleteAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-denied-25.png"))); // NOI18N
         DeleteAccount.setText("DeleteAccount");
         DeleteAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -307,6 +306,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SchoolTech Email");
         setMinimumSize(new java.awt.Dimension(720, 450));
+        setResizable(false);
 
         BackGround.setBackground(new java.awt.Color(255, 254, 239));
         BackGround.setMinimumSize(new java.awt.Dimension(720, 450));
@@ -363,7 +363,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         Inbox.setForeground(new java.awt.Color(102, 102, 102));
         Inbox.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-inbox-30.png"))); // NOI18N
         Inbox.setText("Inbox");
-        Inbox.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Inbox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Inbox.setName("Inbox"); // NOI18N
         Inbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -471,7 +471,6 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         });
 
         ClickButton.setFont(new java.awt.Font("Nineteen Ninety Seven", 0, 18)); // NOI18N
-        ClickButton.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout AccountPanelLayout = new javax.swing.GroupLayout(AccountPanel);
         AccountPanel.setLayout(AccountPanelLayout);
@@ -701,14 +700,12 @@ if (confirmLogout == JOptionPane.YES_OPTION) {
       userEmail.deleteSelectedEmails(EmailPanel);
   
      
-        SwingUtilities.invokeLater(() -> {
-        revalidate();
-        repaint();
-        
-       
-    });
+ EmailPanel.removeAll();
         
           userEmail.displayAllEmailintoButtonCheckbox(LoginUser, EmailPanel, currentStatus);
+          
+             EmailPanel.revalidate();    
+        EmailPanel.repaint();
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

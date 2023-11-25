@@ -59,6 +59,8 @@ public class RegisterAccount extends javax.swing.JFrame {
         Back = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
+        RegisterConfirmation.setResizable(false);
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setMaximumSize(new java.awt.Dimension(231, 244));
         jPanel2.setMinimumSize(new java.awt.Dimension(231, 244));
@@ -166,6 +168,7 @@ public class RegisterAccount extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SCHOOLTECH[REGISTER]");
         setMinimumSize(new java.awt.Dimension(720, 447));
+        setResizable(false);
 
         BackGround.setBackground(new java.awt.Color(255, 255, 204));
         BackGround.setMinimumSize(new java.awt.Dimension(720, 447));
@@ -190,7 +193,6 @@ public class RegisterAccount extends javax.swing.JFrame {
         NameLabel.setForeground(new java.awt.Color(33, 33, 33));
         NameLabel.setText("Name");
 
-        Name.setBackground(new java.awt.Color(255, 255, 255));
         Name.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         Name.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Name.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +205,6 @@ public class RegisterAccount extends javax.swing.JFrame {
         EmailLabel.setForeground(new java.awt.Color(33, 33, 33));
         EmailLabel.setText("Email");
 
-        SrCode.setBackground(new java.awt.Color(255, 255, 255));
         SrCode.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         SrCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,7 +216,6 @@ public class RegisterAccount extends javax.swing.JFrame {
         SrCodeLabel.setForeground(new java.awt.Color(33, 33, 33));
         SrCodeLabel.setText("SR-Code: ");
 
-        Email.setBackground(new java.awt.Color(255, 255, 255));
         Email.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +227,6 @@ public class RegisterAccount extends javax.swing.JFrame {
         DoBLabel.setForeground(new java.awt.Color(33, 33, 33));
         DoBLabel.setText("Date of Birth: YYYY-MM-DD");
 
-        DateofBirth.setBackground(new java.awt.Color(255, 255, 255));
         DateofBirth.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         DateofBirth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +238,6 @@ public class RegisterAccount extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(33, 33, 33));
         jLabel6.setText("Password:");
 
-        Password.setBackground(new java.awt.Color(255, 255, 255));
         Password.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,7 +250,6 @@ public class RegisterAccount extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(33, 33, 33));
         jLabel1.setText("Confirm Password:");
 
-        ConfirmPass.setBackground(new java.awt.Color(255, 255, 255));
         ConfirmPass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ConfirmPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

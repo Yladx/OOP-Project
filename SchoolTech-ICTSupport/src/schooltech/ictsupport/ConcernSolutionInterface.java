@@ -162,6 +162,7 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SchoolTech");
         setMinimumSize(new java.awt.Dimension(720, 450));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 254, 239));
         jPanel1.setMinimumSize(new java.awt.Dimension(720, 450));

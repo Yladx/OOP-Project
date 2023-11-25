@@ -56,6 +56,7 @@ public class ViewSelectedEmail extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ViewEmail");
+        setResizable(false);
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 204));
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

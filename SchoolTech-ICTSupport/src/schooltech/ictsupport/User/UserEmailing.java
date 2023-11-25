@@ -423,11 +423,7 @@ private void archiveEmail(String subject, String emailSender) throws SQLExceptio
                 }
                 
                    // Revalidate and repaint the target panel to refresh the UI
-        SwingUtilities.invokeLater(() -> {
-            targetPanel.revalidate();
-            targetPanel.repaint();
-            System.out.println("Target panel refreshed after deletion.");
-        });
+       
             }
         }
         

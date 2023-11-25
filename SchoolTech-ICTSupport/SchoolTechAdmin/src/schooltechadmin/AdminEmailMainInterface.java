@@ -389,7 +389,7 @@ public class AdminEmailMainInterface extends javax.swing.JFrame {
     private void EmailSentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailSentActionPerformed
         ButtonCLick(evt);
         
-        currentStatus = "!Replied";
+        currentStatus = "AllArchivedSent";
      EmailPanel.removeAll();
             adminemailreceive.displayUserEmailButtons(EmailPanel, currentStatus);    
  

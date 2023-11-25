@@ -9,7 +9,6 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,9 +23,6 @@ import javax.swing.SwingConstants;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.SwingUtilities;
-import java.sql.Statement;
-import java.util.TreeSet;
-import javax.swing.JComboBox;
 /**
  *
  * @author YLADx
@@ -89,17 +85,22 @@ public class AdminEmail extends Admin{
                connectToDatabase();
                String selectSql;
                
-        if (status.startsWith("!")) {
-            // If EmailStatus starts with "!", it means we want emails with a status not equal to the provided value
-            selectSql = "SELECT Subject, DateTime FROM emails WHERE Status != ? ORDER BY DateTime DESC";
-            // Remove "!" from the beginning of EmailStatus for comparison
-            status = status.substring(1);
-        } else {
+         if ("Replied".equalsIgnoreCase(status)) {
+    // If EmailStatus is "Replied", it means we want emails that have been replied or archived
+    selectSql = "SELECT Subject, DateTime FROM emails WHERE Status = ? OR (Status = 'Archived' AND Replies <> '') ORDER BY DateTime DESC";
+} else if ("AllArchivedSent".equalsIgnoreCase(status)) {
+    // If EmailStatus is "AllArchivedSent", it means we want all archived and sent emails without a reply
+    selectSql = "SELECT Subject, DateTime FROM emails WHERE (Status IN ('Archived', 'Sent') AND Replies = '') ORDER BY DateTime DESC";
+}else {
             // Otherwise, select emails with the specified status
             selectSql = "SELECT Subject, DateTime FROM emails WHERE Status = ? ORDER BY DateTime DESC";
         }
                try (PreparedStatement selectStatement = con.prepareStatement(selectSql)) {
-                   selectStatement.setString(1, status);
+                   if (!"AllArchivedSent".equalsIgnoreCase(status)) {
+        // Set the status parameter only if it's not "AllArchivedSent"
+        selectStatement.setString(1, status);
+    }
+                 
                    // Execute the query
                    ResultSet resultSet = selectStatement.executeQuery();
 

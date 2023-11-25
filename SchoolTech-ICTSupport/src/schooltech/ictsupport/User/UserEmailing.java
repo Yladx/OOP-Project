@@ -143,7 +143,11 @@ public class UserEmailing extends User{
             selectSql = "SELECT Subject, DateTime FROM emails WHERE EmailSender = ? AND Status != ? ORDER BY DateTime DESC";
             // Remove "!" from the beginning of EmailStatus for comparison
             EmailStatus = EmailStatus.substring(1);
-        } else {
+        } else if ("Replied".equalsIgnoreCase(EmailStatus)) {
+            // If EmailStatus is "togot", it means we want emails that have been replied
+        selectSql = "SELECT Subject, DateTime FROM emails WHERE EmailSender = ? AND (Status = ? OR (Status = 'Archived' AND Replies <> '')) ORDER BY DateTime DESC";
+
+        }else {
             // Otherwise, select emails with the specified status
             selectSql = "SELECT Subject, DateTime FROM emails WHERE EmailSender = ? AND Status = ? ORDER BY DateTime DESC";
         }
@@ -388,7 +392,7 @@ private void archiveEmail(String subject, String emailSender) throws SQLExceptio
         connectToDatabase();
 
         // Execute SQL statement to check if the email has a reply
-        String selectSql = "SELECT * FROM emails WHERE Status = 'Replied' AND EmailSender = ? AND Subject = ?";
+          String selectSql = "SELECT * FROM emails WHERE EmailSender = ? AND Subject = ? AND Replies <> ''";
         try (PreparedStatement selectStatement = con.prepareStatement(selectSql)) {
             selectStatement.setString(1, loggedInEmail);
             selectStatement.setString(2, emailSubject);

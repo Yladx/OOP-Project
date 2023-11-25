@@ -159,7 +159,7 @@ public boolean performAdminLogin(JTextField adminUsernameField, JPasswordField a
             userComboBox.removeAllItems();
 
             // Add "All" as the first item
-            userComboBox.addItem("All");
+            userComboBox.addItem("Choose User");
 
             // Add names and emails to the combo box
             while (resultSet.next()) {

@@ -178,7 +178,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         );
 
         ComposeEmailBackGround.add(ComposeEmailForm);
-        ComposeEmailForm.setBounds(6, 73, 337, 318);
+        ComposeEmailForm.setBounds(6, 73, 0, 0);
 
         SendEmail.setBackground(new java.awt.Color(153, 204, 255));
         SendEmail.setForeground(new java.awt.Color(33, 33, 33));
@@ -206,7 +206,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
             }
         });
         ComposeEmailBackGround.add(BackFromEmailCompose);
-        BackFromEmailCompose.setBounds(6, 14, 23, 24);
+        BackFromEmailCompose.setBounds(6, 14, 24, 24);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/BackGround/1711593.gif"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -502,8 +502,9 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         jScrollPane3.setBorder(null);
         jScrollPane3.setMaximumSize(new java.awt.Dimension(390, 8000));
         jScrollPane3.setMinimumSize(new java.awt.Dimension(390, 290));
+        jScrollPane3.setOpaque(false);
 
-        EmailPanel.setBackground(new java.awt.Color(255, 255, 255));
+        EmailPanel.setBackground(new java.awt.Color(255, 254, 239));
         EmailPanel.setMinimumSize(new java.awt.Dimension(390, 290));
         EmailPanel.setNextFocusableComponent(ComposeEmailButton);
         EmailPanel.setOpaque(false);

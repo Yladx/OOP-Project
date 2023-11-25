@@ -87,8 +87,17 @@ public class AdminEmail extends Admin{
            try {
                // Connect to the database using the 'con' connection obtained from the User class
                connectToDatabase();
-               // Execute SQL statement to select emails based on the specified status and order by DateTime in descending order
-               String selectSql = "SELECT Subject, DateTime FROM emails WHERE Status = ? ORDER BY DateTime DESC";
+               String selectSql;
+               
+        if (status.startsWith("!")) {
+            // If EmailStatus starts with "!", it means we want emails with a status not equal to the provided value
+            selectSql = "SELECT Subject, DateTime FROM emails WHERE Status != ? ORDER BY DateTime DESC";
+            // Remove "!" from the beginning of EmailStatus for comparison
+            status = status.substring(1);
+        } else {
+            // Otherwise, select emails with the specified status
+            selectSql = "SELECT Subject, DateTime FROM emails WHERE Status = ? ORDER BY DateTime DESC";
+        }
                try (PreparedStatement selectStatement = con.prepareStatement(selectSql)) {
                    selectStatement.setString(1, status);
                    // Execute the query
@@ -150,6 +159,9 @@ public class AdminEmail extends Admin{
                try {
                    String emailSubject = e.getActionCommand();
                    handleEmailButtonClick(subject);
+                   targetPanel.revalidate();
+                   
+                   
                } catch (SQLException ex) {
                    Logger.getLogger(AdminEmail.class.getName()).log(Level.SEVERE, null, ex);
                }
@@ -185,6 +197,8 @@ public class AdminEmail extends Admin{
 
         private void handleEmailButtonClick(String subject) throws SQLException {
             new AdminViewSelectedEmail(subject).setVisible(true);
+            
+            
 
 
         }
@@ -260,116 +274,7 @@ public class AdminEmail extends Admin{
                     targetPanel.repaint(); });
     }
 
-     // Assuming 'con' is the Connection obtained from the User class
-public void SortUserEmail(JComboBox<String> userComboBox, JPanel targetPanel, String status) {
-  try {
-        connectToDatabase();
-
-        // Use TreeSet to store names for sorting
-        TreeSet<String> userSet = new TreeSet<>();
-
-        // Execute SQL statement to select names and emails of users
-        String selectSql = "SELECT Name, Emails FROM users";
-        try (Statement statement = con.createStatement();
-             ResultSet resultSet = statement.executeQuery(selectSql)) {
-
-            // Add names to the set
-            while (resultSet.next()) {
-                String name = resultSet.getString("Name");
-                userSet.add(name);
-            }
-        }
-
-        // Create a sorted array from the set
-        String[] sortedUsers = userSet.toArray(new String[0]);
-
-        // Clear existing items in the combo box
-        userComboBox.removeAllItems();
-
-        // Add "All" as the first item
-        userComboBox.addItem("All");
-
-        // Add sorted names to the combo box
-        for (String sortedUser : sortedUsers) {
-            userComboBox.addItem(sortedUser);
-        }
-    } catch (SQLException e) {
-        // Handle the exception appropriately
-    }
-
-    userComboBox.addActionListener(new ActionListener() {
-      
-        public void actionPerformed(ActionEvent e) {
-            // Get the selected item from the combo box
-            String selectedItem = (String) userComboBox.getSelectedItem();
-
-            // Check if selectedItem is not null
-            if (selectedItem != null) {
-                // Check if "All" is selected
-                if ("All".equals(selectedItem)) {
-                    // Display all emails
-                    displayUserEmailButtons(targetPanel, status);
-                } else {
-                    // Clear existing components in the target panel
-                    targetPanel.removeAll();
-                    // Extract the email from the selected item (assuming the email is separated by " - ")
-                    String[] parts = selectedItem.split(" - ");
-                    if (parts.length > 1) {
-                        String selectedEmail = parts[1];
-
-                        // Display emails for the selected user
-                        displayUserEmailButtonsUser(targetPanel, selectedEmail, status);
-                    }
-                }
-
-                // Revalidate and repaint the target panel to reflect the changes
-                SwingUtilities.invokeLater(() -> {
-                  
-                    targetPanel.revalidate();
-                    targetPanel.repaint();
-                });
-            }
-        }
-    });
-}
-  
-
-
-
-// Method to display user email buttons based on the selected user
-public void displayUserEmailButtonsUser(JPanel targetPanel, String status, String selectedUser) {
-    try {
-        // Connect to the database using the 'con' connection obtained from the User class
-        connectToDatabase();
-
-        // Execute SQL statement to select emails based on the specified status and user, order by DateTime in descending order
-        String selectSql = "SELECT Subject, DateTime FROM emails WHERE Status = ? AND EmailSender = ? ORDER BY DateTime DESC";
-        try (PreparedStatement selectStatement = con.prepareStatement(selectSql)) {
-            selectStatement.setString(1, status);
-            selectStatement.setString(2, selectedUser);
-
-            // Execute the query
-            ResultSet resultSet = selectStatement.executeQuery();
-
-            // Use BoxLayout for vertical arrangement
-            targetPanel.setLayout(new BoxLayout(targetPanel, BoxLayout.Y_AXIS));
-
-            while (resultSet.next()) {
-                String emailSubject = resultSet.getString("Subject");
-                String dateTime = resultSet.getString("DateTime");
-                createButtonWithCheckbox(emailSubject, dateTime, targetPanel);
-
-                targetPanel.add(Box.createVerticalStrut(6));
-            }
-        }
-    } catch (SQLException e) {
-        // Handle the exception appropriately
-    }
-
-    targetPanel.revalidate();
-    targetPanel.repaint();
-}
-
+     
 
      
 }

@@ -80,11 +80,6 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        EmailUs = new javax.swing.JDialog();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        EmailusYes = new javax.swing.JButton();
-        EmailusNo = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Back = new javax.swing.JButton();
         Question = new javax.swing.JLabel();
@@ -97,67 +92,6 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
         y1 = new javax.swing.JButton();
         n1 = new javax.swing.JButton();
         Okay = new javax.swing.JButton();
-
-        EmailUs.setTitle("SchoolTech");
-
-        jPanel2.setBackground(new java.awt.Color(255, 254, 239));
-        jPanel2.setMinimumSize(new java.awt.Dimension(302, 127));
-
-        jLabel2.setText("Do You Want To Email SchoolTech to address your Concern:");
-
-        EmailusYes.setText("YES");
-        EmailusYes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailusYesActionPerformed(evt);
-            }
-        });
-
-        EmailusNo.setText("NO");
-        EmailusNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailusNoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(EmailusYes)
-                        .addGap(45, 45, 45)
-                        .addComponent(EmailusNo)
-                        .addGap(56, 56, 56))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmailusYes)
-                    .addComponent(EmailusNo))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout EmailUsLayout = new javax.swing.GroupLayout(EmailUs.getContentPane());
-        EmailUs.getContentPane().setLayout(EmailUsLayout);
-        EmailUsLayout.setHorizontalGroup(
-            EmailUsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        EmailUsLayout.setVerticalGroup(
-            EmailUsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SchoolTech");
@@ -274,6 +208,11 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
         Okay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-like-64.png"))); // NOI18N
         Okay.setBorderPainted(false);
         Okay.setContentAreaFilled(false);
+        Okay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkayActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -363,19 +302,6 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
     }//GEN-LAST:event_n1ActionPerformed
 
     
-    private void ShowEmailus(){
-       EmailUs.setPreferredSize(new Dimension(300, 200)); // Set your preferred size
-
-        // Pack the frame to adjust its size
-     EmailUs.pack();
-
-    // Set the location of the frame to be centered on the parent JFrame
-     EmailUs.setLocationRelativeTo(this); // Assuming 'this' refers to the parent JFrame
-
-    // Make the frame visible after setting the location
-         EmailUs.setVisible(true); 
-    }
-    
     private boolean containsContactSchoolTechSupport(String text) {
     // Case-insensitive check for the phrase
     return text.toLowerCase().contains("contact schooltechsupport");
@@ -421,7 +347,7 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
                                 // Replace this with the appropriate code to open the login interface
                                 Login_Interface loginInterface = new Login_Interface();
                                 loginInterface.setVisible(true);
-                                this.dispose();
+                               
                             }
                             
                             
@@ -459,13 +385,9 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
 
     }//GEN-LAST:event_y1ActionPerformed
 
-    private void EmailusYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailusYesActionPerformed
+    private void OkayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkayActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailusYesActionPerformed
-
-    private void EmailusNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailusNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmailusNoActionPerformed
+    }//GEN-LAST:event_OkayActionPerformed
 
     
     
@@ -510,19 +432,14 @@ Solution1.setPreferredSize(new Dimension(Solution1.getPreferredSize().width, Sol
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JPanel DoesItFixYourConcern;
-    private javax.swing.JDialog EmailUs;
-    private javax.swing.JButton EmailusNo;
-    private javax.swing.JButton EmailusYes;
     private javax.swing.JButton Okay;
     private javax.swing.JPanel OtherSolutionPanel;
     private javax.swing.JLabel Question;
     private javax.swing.JLabel Solution1;
     private javax.swing.JPanel Solution1Panel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton n1;
     private javax.swing.JButton y1;
     // End of variables declaration//GEN-END:variables

@@ -111,6 +111,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         ComposeEmailForm.setBackground(new java.awt.Color(204, 204, 204));
         ComposeEmailForm.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ComposeEmailForm.setForeground(new java.awt.Color(33, 33, 33));
+        ComposeEmailForm.setMinimumSize(new java.awt.Dimension(337, 318));
 
         EmailerName.setFont(new java.awt.Font("Felix Titling", 0, 12)); // NOI18N
         EmailerName.setForeground(new java.awt.Color(33, 33, 33));
@@ -178,7 +179,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         );
 
         ComposeEmailBackGround.add(ComposeEmailForm);
-        ComposeEmailForm.setBounds(6, 73, 0, 0);
+        ComposeEmailForm.setBounds(6, 73, 337, 318);
 
         SendEmail.setBackground(new java.awt.Color(153, 204, 255));
         SendEmail.setForeground(new java.awt.Color(33, 33, 33));
@@ -219,9 +220,7 @@ public class UserEmailMainInterface extends javax.swing.JFrame {
         ComposeEmail.getContentPane().setLayout(ComposeEmailLayout);
         ComposeEmailLayout.setHorizontalGroup(
             ComposeEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComposeEmailLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         ComposeEmailLayout.setVerticalGroup(
             ComposeEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

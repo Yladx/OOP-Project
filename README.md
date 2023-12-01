@@ -13,7 +13,7 @@ when someone edit the data and push it pull it before adding new one
 # OOP-Project
 
 steps to follow
-1. Instal the font nineteennitetyseven and retropix font
+1. Install the font found in resources nineteennitetyseven and retropix font
 2. Download xamp
 3. open xamp and start apache and mysql serven in xamp
 4. then open http://localhost/dashboard/

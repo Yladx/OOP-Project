@@ -235,7 +235,8 @@ private void setButtonProperties(JButton button) {
     private void connectToDatabase() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/specificconcern?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/specificconcern?zeroDateTimeBehavior=CONVERT_TO_NULL", 
+                    "root", "");
            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);

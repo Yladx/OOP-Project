@@ -6,15 +6,10 @@ import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/**
- *
- * @author YLADx
- */
+
 public class WelcomeMessageInterface extends javax.swing.JFrame {
 
-    /**
-     * Creates new form WelcomeMessageInterface
-     */
+    
     public WelcomeMessageInterface() {
         initComponents();
         welcomemess.setText("<html> Welcome to SchoolTech-ICT Support! </html>");

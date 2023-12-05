@@ -81,7 +81,6 @@ public class AccounTSettings extends User {
             return false;
         }
     } catch (SQLException ex) {
-        // Handle the exception, e.g., log the error
 
         // Display a JOptionPane message for the exception
         JOptionPane.showMessageDialog(null, "Error deleting login email: " + ex.getMessage());

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package schooltech.ictsupport.User;
 
 import java.sql.Connection;
@@ -18,7 +15,7 @@ public abstract class User {
     private String password;
     private String confirmPassword;
 
-    // Constructors
+    
     public User() {
         // Default constructor
     }
@@ -89,8 +86,7 @@ protected void connectToDatabase() throws SQLException {
         // Set autocommit to false for manual transaction management
         con.setAutoCommit(false);
 
-        // Additional database setup, if needed
-
+       
         // If everything is successful, commit the changes
         con.commit();
     } catch (ClassNotFoundException | SQLException ex) {

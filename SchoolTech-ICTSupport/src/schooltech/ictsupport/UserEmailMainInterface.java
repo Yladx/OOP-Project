@@ -12,14 +12,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import schooltech.ictsupport.User.AccounTSettings;
 import schooltech.ictsupport.User.UserEmailing;
 
-/**
- *
- * @author YLADx
- */
 public class UserEmailMainInterface extends javax.swing.JFrame {
 
     UserEmailing userEmail = new UserEmailing();
@@ -699,11 +694,11 @@ if (confirmLogout == JOptionPane.YES_OPTION) {
       userEmail.deleteSelectedEmails(EmailPanel);
   
      
- EmailPanel.removeAll();
+        EmailPanel.removeAll();
         
           userEmail.displayAllEmailintoButtonCheckbox(LoginUser, EmailPanel, currentStatus);
           
-             EmailPanel.revalidate();    
+        EmailPanel.revalidate();    
         EmailPanel.repaint();
     }//GEN-LAST:event_DeleteActionPerformed
 
@@ -743,11 +738,11 @@ if (confirmLogout == JOptionPane.YES_OPTION) {
     }//GEN-LAST:event_UnarchiveButtonActionPerformed
 
     private void ComposeEmailButtonFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ComposeEmailButtonFocusGained
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_ComposeEmailButtonFocusGained
 
     private void ButtonCLick(ActionEvent evt){
-           JButton sourceButton = (JButton) evt.getSource();
+     JButton sourceButton = (JButton) evt.getSource();
     String buttonName = sourceButton.getName();
 
     ClickButton.setText(buttonName);

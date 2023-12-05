@@ -13,7 +13,7 @@ import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ViewSelectedEmail extends javax.swing.JFrame {
+public final class ViewSelectedEmail extends javax.swing.JFrame {
 
     
     private Connection con;

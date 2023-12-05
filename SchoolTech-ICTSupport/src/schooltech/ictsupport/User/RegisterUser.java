@@ -8,10 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-/**
- *
- * @author YLADx
- */
 public class  RegisterUser extends User{
     
     private final JTextField SrCode;

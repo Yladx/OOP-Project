@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package schooltech.ictsupport.User;
 
 import javax.swing.JButton;
@@ -30,10 +27,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author YLADx
- */
+
 public class UserEmailing extends User{
     
      private String loggedInEmail;
@@ -43,10 +37,10 @@ public class UserEmailing extends User{
     private String Replies = "";
     private String Status = "Sent";
   
-    // Constructors, getters, and setters for the new properties
+    
 
     public UserEmailing() {
-        // Default constructor
+        
     }
 
     public UserEmailing(String loggedInEmail, String emailSubject, String emailMessage, java.util.Date date) {
@@ -55,10 +49,7 @@ public class UserEmailing extends User{
         this.emailMessage = emailMessage;
     }
 
-    // Getter and setter methods for the new properties
-    // ...
-
-    // Method to get email data from UI components
+    
     public void getEmailDataFromUI(String LoginEmail, JTextField subjectField, JTextArea messageArea) {
         this.loggedInEmail = LoginEmail;
         this.emailSubject = subjectField.getText();
